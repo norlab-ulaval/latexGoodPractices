@@ -1,0 +1,90 @@
+% The file intend to keep track of good practices in Latex writing.
+
+%==============================
+% DOCUMENT
+%==============================
+
+% Fix some error reporting
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+
+% All the same, there are commands, classes and packages which are outdated and superseded. 
+% nag provides routines to warn the user about the use of those.
+\usepackage[l2tabu,orthodox]{nag}
+
+%==============================
+% BIBLIOGRAPHY
+%==============================
+
+% \bibliography{filename.bib} % in your preamble
+% \citet{key}, \citep{key} % in the document
+% \printbibliography % to generate the reference section
+\usepackage[
+backend=bibtex8, 
+style=ieee, 
+sorting=none, 
+natbib=true, 
+doi=false, 
+isbn=false, 
+url=false, 
+eprint=false, 
+maxcitenames=1, 
+mincitenames=1
+]{biblatex}
+
+%==============================
+% TEXT
+%==============================
+
+% \autoref{key} % instead of Figure~\ref{key}, Table~\ref{key}, or Section~\ref{key}
+\usepackage[pdftex,colorlinks]{hyperref}
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Section}
+
+% \acrodef{ICP}{Iterative Closest Point} % in the preamble
+% \ac{ICP} % in the document
+\usepackage{acronym}
+
+%==============================
+% FIGURE
+%==============================
+
+% Preferred figure format:
+% - pdf or eps for graphs and schemas
+% - jpg for photo
+
+% \includegraphics[width=\textwidth]{filename}
+\usepackage[pdftex]{graphicx}
+
+% convert eps to pdf, you need to skip the file extension to work properly
+% \includegraphics{filename} % instead of \includegraphics{filename.eps}
+\usepackage{epstopdf}
+
+\graphicspath{{./latexGoodPractices/}}
+
+%==============================
+% TABLE
+%==============================
+
+% \toprule, \midrule, \bottomrule % instead of \hline
+\usepackage{booktabs}
+
+%==============================
+% MATH
+%==============================
+
+% Better symboles
+\usepackage{amssymb,amsfonts,amsmath,amscd}
+
+% \bm % in equations for proper bold font
+\usepackage{bm} 
+
+% Some handy commands
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\bbm}{\begin{bmatrix}}
+\newcommand{\ebm}{\end{bmatrix}}
+
+
