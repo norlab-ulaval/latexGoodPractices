@@ -16,7 +16,7 @@
 % BIBLIOGRAPHY
 %==============================
 
-% \bibliography{filename.bib} % in your preamble
+% \addbibresource{references.bib} % in your preamble
 % \citet{key}, \citep{key} % in the document
 % \printbibliography % to generate the reference section
 \usepackage[
@@ -43,7 +43,16 @@ mincitenames=1
 
 % \acrodef{ICP}{Iterative Closest Point} % in the preamble
 % \ac{ICP} % in the document
-\usepackage{acronym}
+\usepackage[printonlyused]{acronym}
+
+% International unit system 
+% e.g., \SI{1000}{\m\squared}, \num{20000}
+\usepackage{siunitx}
+\sisetup{group-separator = \text{\,}} % small space for thousand separator
+
+% avoid single line on a page or single line under a figure
+% no command to use
+\usepackage[all]{nowidow}
 
 %==============================
 % FIGURE
@@ -60,14 +69,25 @@ mincitenames=1
 % \includegraphics{filename} % instead of \includegraphics{filename.eps}
 \usepackage{epstopdf}
 
+% for Inkscape figures, import tex files in other folder and keep paths coherent
+% e.g., \import{images}{timeline.pdf_tex}
+\usepackage{import}
+
+% include path for logos
 \graphicspath{{./latexGoodPractices/}}
 
 %==============================
 % TABLE
 %==============================
 
+% Cleaner spacing for tables
 % \toprule, \midrule, \bottomrule % instead of \hline
 \usepackage{booktabs}
+
+% Tables that can fit page length
+% e.g.,three columns with the second one being twice as large as the others
+% \begin{tabu}{X X[2] X}
+\usepackage{tabu}
 
 %==============================
 % MATH
