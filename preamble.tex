@@ -54,6 +54,15 @@ mincitenames=1
 % no command to use
 \usepackage[all]{nowidow}
 
+% Colored text
+\usepackage[dvipsnames]{xcolor}
+
+% Fill the template with text
+\usepackage{lipsum}
+
+% Better command to make sure that people don't confuse lipsum text with real text
+\newcommand{\lightlipsum}[1][0]{\textcolor{gray!50}{\lipsum[#1]}}
+
 %==============================
 % FIGURE
 %==============================
