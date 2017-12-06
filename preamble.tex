@@ -36,10 +36,12 @@ mincitenames=1
 % TEXT
 %==============================
 
-% \autoref{key} % instead of Figure~\ref{key}, Table~\ref{key}, or Section~\ref{key}
+% \autoref{key} % instead of Figure~\ref{key}, Table~\ref{key}, Equation~\ref{key}, or Section~\ref{key}
 \usepackage[pdftex,colorlinks]{hyperref}
+% fix names for autoref
 \def\sectionautorefname{Section}
 \def\subsectionautorefname{Section}
+\newcommand*{\Appendixautorefname}{Appendix}
 
 % \acrodef{ICP}{Iterative Closest Point} % in the preamble
 % \ac{ICP} % in the document
