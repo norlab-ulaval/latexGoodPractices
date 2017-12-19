@@ -72,6 +72,8 @@ mincitenames=1
 % Preferred figure format:
 % - pdf or eps for graphs and schemas
 % - jpg for photo
+% Don't use png as each compilation decompress the image, thus making compilation time
+% untolerable when there are more than 5 images...
 
 % \includegraphics[width=\textwidth]{filename}
 \usepackage[pdftex]{graphicx}
