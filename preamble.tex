@@ -66,6 +66,11 @@
 % Better command to make sure that people don't confuse lipsum text with real text
 \newcommand{\lightlipsum}[1][0]{\textcolor{gray!50}{\lipsum[#1]}}
 
+% Add i.e and e.g commands
+\usepackage{xspace} %smart handling of space in commands
+\newcommand{\ie}{i.e.,\xspace{}}
+\newcommand{\eg}{e.g.,\xspace{}}
+
 %==============================
 % FIGURE
 %==============================
