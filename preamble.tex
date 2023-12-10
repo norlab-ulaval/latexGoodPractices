@@ -1,133 +1,321 @@
-% The file intend to keep track of good practices in Latex writing.
+\newcommand\hmmax{0}
+\newcommand\bmmax{0}
 
-%==============================
-% DOCUMENT
-%==============================
+\PassOptionsToPackage{hyphens}{url}\usepackage[hidelinks]{hyperref}
 
-% Fix some error reporting
-\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
-\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+% <<<<<<<<<<<-Stuff from preamble icra
+% For checkmark and X mark
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}% Checkmark
+\newcommand{\xmark}{\ding{55}}% X mark
+\usepackage{supertabular}
+\usepackage{rotating,tabularx}
+% end of preamble icra -->>>>>>>>
 
-% All the same, there are commands, classes and packages which are outdated and superseded.
-% nag provides routines to warn the user about the use of those.
-\usepackage[l2tabu,orthodox]{nag}
-
-%==============================
-% BIBLIOGRAPHY
-%==============================
-
-% \addbibresource{references.bib} % in your preamble
-% \citet{key}, \citep{key} % in the document
-% \printbibliography % to generate the reference section
-\usepackage[
-    backend=bibtex8,
-    style=ieee,
-    sorting=none,
-    natbib=true,
-    doi=false,
-    isbn=false,
-    url=false,
-    eprint=false,
-    maxcitenames=1,
-    mincitenames=1
-]{biblatex}
-
-%==============================
-% TEXT
-%==============================
-
-% \autoref{key} % instead of Figure~\ref{key}, Table~\ref{key}, Equation~\ref{key}, or Section~\ref{key}
-\usepackage[pdftex,colorlinks]{hyperref}
-% fix names for autoref
-\def\sectionautorefname{Section}
-\def\subsectionautorefname{Section}
-\def\subsubsectionautorefname{Section}
-\newcommand*{\Appendixautorefname}{Appendix}
-% cleveref
-% \cref{sec:section}
-% fix names for cleveref
-\usepackage[french,english,noabbrev,nameinlink]{cleveref}
-
-% \acrodef{ICP}{Iterative Closest Point} % in the preamble
-% \ac{ICP} % in the document
-\usepackage[printonlyused]{acronym}
-
-% International unit system
-% e.g., \SI{1000}{\m\squared}, \num{20000}
-\usepackage{siunitx}
+% <<<<<<<<<<<- Stuff from preamble fsr
+\usepackage{pdflscape}      % for \landscape to rotate the page in pdf
+%\usepackage{mathptmx}       % selects Times Roman as basic font    -> Make your thesis look awful! :(
+\usepackage{helvet}         % selects Helvetica as sans-serif font
+\usepackage{courier}        % selects Courier as typewriter font
+\usepackage{type1cm}        % activate if the above 3 fonts are
+\usepackage{makeidx}         % allows index generation
+\usepackage[binary-units]{siunitx}
 \sisetup{group-separator = \text{\,}} % small space for thousand separator
-
-% avoid single line on a page or single line under a figure
-% no command to use
-\usepackage[all]{nowidow}
-
+%\usepackage{graphicx}        % standard LaTeX graphics tool
+% when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+\usepackage[normalem]{ulem}  % pour sout
+% Add subfigure
+\usepackage{subcaption}
+% sidecaption
+\usepackage{sidecap}
+% Put text over photos
+\usepackage[percent]{overpic}
+% to put vertical caption
+\usepackage{copyrightbox}
+% Better symboles
+%\usepackage{amsfonts,amsmath,amscd}
+%Patch for a widecheck
+%% code from mathabx.sty and mathabx.dcl
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{
+	<5> <6> <7> <8> <9> <10>
+	<10.95> <12> <14.4> <17.28> <20.74> <24.88>
+	mathx10
+}{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareFontSubstitution{U}{mathx}{m}{n}
+\DeclareMathAccent{\widecheck}{0}{mathx}{"71}
+\DeclareMathAccent{\wideparen}{0}{mathx}{"75}
 % Colored text
-\usepackage[dvipsnames]{xcolor}
+\usepackage{xcolor}
+% end preambule from fsr -->>>>>>>>
 
-% Fill the template with text
-\usepackage{lipsum}
+%\newcommand{\philg}[1]{\textcolor{blue}{#1}}
+%\newcommand{\babin}[1]{\textcolor{red}{#1}}
 
-% Better command to make sure that people don't confuse lipsum text with real text
-\newcommand{\lightlipsum}[1][0]{\textcolor{gray!50}{\lipsum[#1]}}
+\usepackage[printonlyused, nohyperlinks]{acronym}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+\usepackage{amsmath} % called by mathtools
+% \usepackage[toc,page]{appendix}
+%\usepackage{bbm}
 
-% Add i.e and e.g commands
-\usepackage{xspace} %smart handling of space in commands
-\newcommand{\ie}{i.e.,\xspace{}}
-\newcommand{\eg}{e.g.,\xspace{}}
+\bibliographystyle{unsrtnat}
+\usepackage[
+backend=bibtex, 
+style=ieee, 
+sorting=none, 
+natbib=true, 
+doi=false, 
+isbn=false, 
+url=false, 
+eprint=false, 
+maxcitenames=1, 
+mincitenames=1]{biblatex}
 
-%==============================
-% FIGURE
-%==============================
+\usepackage{bm}
+\usepackage[font=small]{caption}
+\usepackage{dirtytalk}
+\usepackage{float}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+%\usepackage{mathabx}
+%\usepackage{mathpazo} % Set the font to Palatino.
+\usepackage{mathtools}
+\usepackage{multirow}
+%\usepackage[french,english]{babel}  % Babel is imported by ulthese...
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{siunitx}
+\usepackage{tabu}
+\usepackage{tabularx}
+\usepackage[]{url}
 
-% Preferred figure format:
-% - pdf or eps for graphs and schemas
-% - jpg for photo
-% Don't use png as each compilation decompress the image, thus making compilation time
-% untolerable when there are more than 5 images...
+\usepackage{threeparttablex} % For M-estimator appendice
+\usepackage{longtable} % same
 
-% \includegraphics[width=\textwidth]{filename}
-\usepackage[pdftex]{graphicx}
+% For dates and time
+\usepackage{datetime2}
+\DTMnewtimestyle{custom}{
+	\renewcommand{\DTMdisplaytime}[3]{
+		\DTMtexorpdfstring{\DTMtwodigits{##1}:\DTMtwodigits{##2}}
+	}
+}
+\DTMsettimestyle{custom}
 
-% convert eps to pdf, you need to skip the file extension to work properly
-% \includegraphics{filename} % instead of \includegraphics{filename.eps}
-\usepackage{epstopdf}
+\addto\extrasenglish{%
+	\renewcommand{\chapterautorefname}{Chapter}%
+	\renewcommand{\sectionautorefname}{Section}%
+	\renewcommand{\subsectionautorefname}{Subsection}%
+}
 
-% for Inkscape figures, import tex files in other folder and keep paths coherent
-% e.g., \import{images}{timeline.pdf_tex}
-\usepackage{import}
+% For table arrows
+\usepackage{mathabx}
 
-% include path for logos
-\graphicspath{{./latexGoodPractices/}}
+% To autoref an appendix section
+%\newcommand{\aref}[1]{\hyperref[#1]{Appendix~\ref{#1}}}
 
-%==============================
-% TABLE
-%==============================
+%% New column types for tabularx
+%\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
-% Cleaner spacing for tables
-% \toprule, \midrule, \bottomrule % instead of \hline
+% Rotated page have rotated page number
+\usepackage{everypage}
+\newcommand{\Lpagenumber}{\ifdim\textwidth=\linewidth\else\bgroup
+	\dimendef\margin=0 %use \margin instead of \dimen0
+	\ifodd\value{page}\margin=\oddsidemargin
+	\else\margin=\evensidemargin
+	\fi
+	
+	\thispagestyle{empty} 
+	\raisebox{\dimexpr -\topmargin-\headheight-\headsep-0.5\linewidth}[0pt][0pt]{%
+		\rlap{\hspace{\dimexpr \margin+\textheight+\footskip}%
+			\llap{\rotatebox{90}{\thepage}}}}%
+	\egroup\fi}
+\AddEverypageHook{\Lpagenumber}%
+
+
+%\defbibheading{subbibheading}{
+	%  \section*{References (Chapter \ref{refsegment:\therefsection\therefsegment})}
+	%}
+
+% For tables / figures merged
+\usepackage{graphicx,booktabs}
+
+% For better tables
 \usepackage{booktabs}
 
 % Tables that can fit page length
 \usepackage{tabularx}
-% Multirows and multicolumns in table
 \usepackage{multirow, multicol}
 
-%==============================
-% MATH
-%==============================
+\usepackage{xspace} %smart handling of space in commands
+\newcommand{\ie}{i.e.,\xspace{}}
+\newcommand{\eg}{e.g.,\xspace{}}
 
-% Better symbols
-\usepackage{amssymb,amsfonts,amsmath,amscd}
+\acrodef{SSMR}{skid-steer mobile robot}
+\acrodef{ICR}{instantaneous center of rotation}
+\acrodef{ROC}{radius of curvature}
+\acrodef{GPR}{ground-penetrating radar}
+\acrodef{EKF}{extended Kalman filter}
+\acrodef{4WD}{four-wheel drive}
+\acrodef{ICP}{Iterative-Closest-Point}
+\acrodef{UGV}{unmanned ground vehicle}
+\acrodef{ROS}{Robot Operating System}
+\acrodef{IMU}{Inertial Measurement Unit}
+\acrodef{RMSRE}{root mean squared relative error}
+\acrodef{SLAM}{simultaneous localization and mapping}
+\acrodef{SOTA}{state-of-the-art}
+\acrodef{SSMR}{skid-steering mobile robot}
+\acrodef{AMR}{Ackermann mobile robot}
+\acrodef{UGV}{uncrewed ground vehicle} %FP: more gender neutral
+\acrodef{IDD}{ideal differential-drive}
+\acrodef{ICR}{instantaneous center or rotation}
+\acrodef{RTK}{Realtime Kinematics}
+\acrodef{GNSS}{Global Navigation Satellite System}
+\acrodef{ROC}{radius of curvature}
+\acrodef{IMU}{inertial measurement unit}
+\acrodef{MPC}{model predictive control}
+\acrodef{GP}{Gaussian processe}
+\acrodef{BLR}{Bayesian linear regression}
+\acrodef{IPEM}{integrated prediction error minimization}
+\acrodef{MLP}{multilayer perceptron}
+\acrodef{MRMSE}{multi-step root mean squared error}
+\acrodef{T-MRMSE}{translational multi-step root mean squared error}
+\acrodef{R-MRMSE}{rotational multi-step root mean squared error}
+\acrodef{M-Z-score}{multi-step Z-score}
+\acrodef{DRIVE}{Data-driven Robot Input Vector Exploration}
+\acrodef{SNOW}{Self-driving Navigation Optimized for Winter}
+\acrodef{AMSL}{Above Mean Sea Level}
+\acrodef{DoF}{degree of freedom}
+\acrodef{COM}{center of mass}
+\acrodef{VTR}[VT\&R]{Visual Teach and Repeat}
+\acrodef{LTR}[LT\&R]{Lidar Teach and Repeat}
+\acrodef{CNN}{Convolutional Neural Network}
+\acrodef{GeRoNa}{Generic Robot Navigation}
+\acrodef{OE}{Orthogonal-Exponential}
+\acrodef{DD-ORTHEXP}{Differential-Drive-ORTHEXP}
+\acrodef{POI}{Points of Interest}
+\acrodef{CAD}{Computer-Aided Drawing}
+\acrodef{GPS}{Global Positioning System}
+\acrodef{RAM}{Random Access Memory}
+\acrodef{WILN}[WILN]{Weather-Invariant Lidar-based Navigation}
 
-% \bm % in equations for proper bold font
-\usepackage{bm}
+\newcommand{\DOUGHNUTCALIB}{\ac{DRIVE}\xspace}
+\newcommand{\ICRBASED}{\ac{ICR}-based\xspace} 
+\newcommand{\DIMPARAMS}{\bm k}
+\newcommand{\HORDUR}{h_d}
+\newcommand{\WINSIZE}{h}
+\newcommand{\TRAINDATA}{$\mathcal{D}$\xspace}
+\newcommand{\DOUGHNUTDATA}{$\mathcal{D}_D$}
+\newcommand{\HUMANDATA}{$\mathcal{D}_H$}
+\newcommand{\PREDSTATE}{\,^\mapf\!\hat{\bm q}}
+\newcommand{\MEASSTATE}{\,^\mapf\bm q}
+\newcommand{\MARMOTTE}{HD2\xspace}
+\newcommand{\CMDBODYVEL}{^{\robotf}\bm{f}}
+\newcommand{\SLIPBODYVEL}{^{\robotf}\bm{s}}
+\newcommand{\OBSERVEDSLIP}{\bm{s}}
+\newcommand{\INPUTVECTOR}{\bm{u}}
+\newcommand{\STATEPROPMAT}{_{\robotf}^{\mapf}\bm{T}\left(^\mapf\theta_t\right)}
+\newcommand{\INPUTSPACE}{\mathcal{J}}
+\newcommand{\BODYVELSPACE}{\mathcal{B}}
+\newcommand{\CENTRIFUGAL}{\psi}
+\newcommand{\OPTIMCALIBTIME}{$t_{\text{opt}}$\xspace}
+\newcommand{\robotstate}{\bm{q}}
+\newcommand{\mapf}{\mathcal{G}} % map reference frame
+\newcommand{\robotf}{\mathcal{R}} % robot reference frame
+\newcommand{\learnedslip}{\bm{\Xi}}
+\newcommand{\blrweights}{\bm{\gamma}}
+\newcommand{\blrinputs}{\bm{x}}
+\newcommand{\MRSME}{\epsilon}
+\newcommand{\SENSORMEASUREMENTS}{\bm{z}}
+\newcommand{\NITRO}{\ac{WILN}\xspace} 
 
-% Some handy commands
-\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
-\newcommand{\abs}[1]{\left\vert#1\right\vert}
-\newcommand{\set}[1]{\left\{#1\right\}}
-\newcommand{\Real}{\mathbb R}
-\newcommand{\bbm}{\begin{bmatrix}}
-\newcommand{\ebm}{\end{bmatrix}}
 
 
+%For tikz figure
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{shapes}
+
+
+
+
+% Text commands
+\newcommand{\laverdiere}{\emph{Cabin}\xspace} % Laverdière
+\newcommand{\quebec}{Qu\'{e}bec\xspace} % Québec
+\newcommand{\foretmo}{For\^{e}t Montmorency\xspace} % Québec
+
+% Useful math commands
+\newcommand{\odomf}{\mathcal{O}} % odom reference frame
+\newcommand{\lidarf}{\mathcal{L}} % lidar reference frame
+\newcommand{\pathf}{\mathcal{S}} % path Frenet-Serret frame
+\newcommand{\skreadpc}{\mathcal{P}_s} % Skewed reading point cloud
+\newcommand{\readpc}{\mathcal{P}} % reading point cloud
+\newcommand{\refpc}{\mathcal{J}} % reference point cloud
+\newcommand{\refpoint}{\bm{j}} % reference point cloud
+\newcommand{\match}{\mathcal{M}} % set of point matches
+\newcommand{\weightset}{\mathcal{W}} % set of point weights
+\newcommand{\transform}[2]{$_{#1}^{#2}\bm{T}$} % Transform from #1 frame to #2 frame
+\newcommand{\reftraj}{\bm q_{\text{ref}}} % Reference trajectory
+\newcommand{\poseplane}{\bm q_{\text{2D}}} % 2D robot pose
+\newcommand{\cterr}{\epsilon_{CT}} % Cross-Track error
+\newcommand{\curv}{\kappa} % Path curvature
+\newcommand{\prior}[2]{${}_{#1}^{#2}\bm{\check{T}}$} % prior transform
+\newcommand{\estimate}[2]{${}_{#1}^{#2}\bm{\hat{T}}$} % estimate transform
+\newcommand{\kdtree}{kd-tree${}^5$\xspace} % kd tree
+
+% icp params
+\newcommand{\randsubratio}{\eta_s}
+\newcommand{\bbox}{\bm b}
+\newcommand{\matchernn}{n_m}
+\newcommand{\matchermaxdist}{d_{\text{max}}}
+\newcommand{\matcherepsilon}{\varepsilon}
+\newcommand{\outlierratio}{\eta_d}
+\newcommand{\checkererrortran}{\varepsilon_{{t}_{\text{min}}}}
+\newcommand{\checkererrorrot}{\varepsilon_{{\theta}_{\text{min}}}}
+\newcommand{\maxiticp}{i_\text{max}}
+\newcommand{\maxdistappend}{\rho}
+\newcommand{\normalsnn}{n_n}
+\newcommand{\dynthresh}{\tau_d}
+\newcommand{\voxelsize}{v_s}
+\newcommand{\reftrajdist}{d_{\text{ref}}}
+
+% PF params
+\newcommand{\nomlinvel}{v_{\text{nom}}} % Nominal velocity
+\newcommand{\maxlinvel}{v_{\text{max}}} % Max velocity
+\newcommand{\minlinvel}{v_{\text{min}}} % Min velocity
+\newcommand{\maxrotvel}{\omega_m}
+\newcommand{\OEk}{\beta}
+\newcommand{\OEKh}{\beta_h}
+\newcommand{\OEKg}{\beta_g}
+\newcommand{\goaltol}{\tau_{g}}
+\newcommand{\waypointtol}{\tau_{w}}
+
+% argmin and argmax
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\floor}{floor}
+\DeclareMathOperator*{\ceil}{ceil}
+
+% math operators for ICP
+\DeclareMathOperator*{\error}{e}
+\DeclareMathOperator*{\weight}{w}
+
+% for mean
+\newcommand*\mean[1]{\bar{#1}}
+
+% Fill the template with text
+\usepackage{lipsum}
+% Better command to make sure that people don't confuse lipsum text with real text
+\newcommand{\lightlipsum}[1][0]{\textcolor{gray!50}{\lipsum[#1]}}
+
+
+\addbibresource{references-main.bib}
+%\addbibresource{../references_crv2020.bib}
+%\addbibresource{references_ICRA_2023.bib}
+%\addbibresource{references_IROS_2023.bib}
