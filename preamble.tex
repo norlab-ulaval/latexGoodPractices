@@ -162,6 +162,7 @@ mincitenames=1]{biblatex}
 \acrodef{ROC}{radius of curvature}
 \acrodef{GPR}{ground-penetrating radar}
 \acrodef{EKF}{extended Kalman filter}
+\acrodef{MI-UKF}{multi-innovation unscented Kalman filter}
 \acrodef{4WD}{four-wheel drive}
 \acrodef{ICP}{Iterative-Closest-Point}
 \acrodef{UGV}{unmanned ground vehicle}
@@ -174,13 +175,15 @@ mincitenames=1]{biblatex}
 \acrodef{AMR}{Ackermann mobile robot}
 \acrodef{UGV}{uncrewed ground vehicle} %FP: more gender neutral
 \acrodef{IDD}{ideal differential-drive}
-\acrodef{ICR}{instantaneous center or rotation}
+\acrodef{ICR}{instantaneous center of rotation}
+\acrodefplural{ICR}[ICRs]{instantaneous centers or rotation}
 \acrodef{RTK}{Realtime Kinematics}
 \acrodef{GNSS}{Global Navigation Satellite System}
 \acrodef{ROC}{radius of curvature}
 \acrodef{IMU}{inertial measurement unit}
 \acrodef{MPC}{model predictive control}
-\acrodef{GP}{Gaussian processe}
+\acrodef{GP}{Gaussian process}
+\acrodefplural{GP}[GPs]{Gaussian processes}
 \acrodef{BLR}{Bayesian linear regression}
 \acrodef{IPEM}{integrated prediction error minimization}
 \acrodef{MLP}{multilayer perceptron}
@@ -270,7 +273,7 @@ mincitenames=1]{biblatex}
 \newcommand{\estimate}[2]{${}_{#1}^{#2}\bm{\hat{T}}$} % estimate transform
 \newcommand{\kdtree}{kd-tree${}^5$\xspace} % kd tree
 \newcommand{\robotroll}{^\mathcal{\mapf}\psi} % roll angle
-\newcommand{\robotpitch}{^\mathcal{\mapf}\phi} % pitch angle
+\newcommand{\robotpitch}{^\mathcal{\mapf}\alpha} % pitch angle
 \newcommand{\robotyaw}{^\mathcal{\mapf}\theta} % yaw angle
 
 % icp params
