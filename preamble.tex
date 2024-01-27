@@ -11,6 +11,11 @@
 \usepackage{supertabular}
 \usepackage{rotating,tabularx}
 % end of preamble icra -->>>>>>>>
+\usepackage{dingbat}
+\usepackage{diagbox}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\setlength{\extrarowheight}{1pt}
+
 
 % <<<<<<<<<<<- Stuff from preamble fsr
 \usepackage{pdflscape}      % for \landscape to rotate the page in pdf
@@ -157,57 +162,6 @@ mincitenames=1]{biblatex}
 \newcommand{\ie}{i.e.,\xspace{}}
 \newcommand{\eg}{e.g.,\xspace{}}
 
-\acrodef{SSMR}{skid-steer mobile robot}
-\acrodef{ICR}{instantaneous center of rotation}
-\acrodef{ROC}{radius of curvature}
-\acrodef{GPR}{ground-penetrating radar}
-\acrodef{EKF}{extended Kalman filter}
-\acrodef{MI-UKF}{multi-innovation unscented Kalman filter}
-\acrodef{4WD}{four-wheel drive}
-\acrodef{ICP}{Iterative-Closest-Point}
-\acrodef{UGV}{unmanned ground vehicle}
-\acrodef{ROS}{Robot Operating System}
-\acrodef{IMU}{Inertial Measurement Unit}
-\acrodef{RMSRE}{root mean squared relative error}
-\acrodef{SLAM}{simultaneous localization and mapping}
-\acrodef{SOTA}{state-of-the-art}
-\acrodef{SSMR}{skid-steering mobile robot}
-\acrodef{AMR}{Ackermann mobile robot}
-\acrodef{UGV}{uncrewed ground vehicle} %FP: more gender neutral
-\acrodef{IDD}{ideal differential-drive}
-\acrodef{ICR}{instantaneous center of rotation}
-\acrodefplural{ICR}[ICRs]{instantaneous centers or rotation}
-\acrodef{RTK}{Realtime Kinematics}
-\acrodef{GNSS}{Global Navigation Satellite System}
-\acrodef{ROC}{radius of curvature}
-\acrodef{IMU}{inertial measurement unit}
-\acrodef{MPC}{model predictive control}
-\acrodef{GP}{Gaussian process}
-\acrodefplural{GP}[GPs]{Gaussian processes}
-\acrodef{BLR}{Bayesian linear regression}
-\acrodef{IPEM}{integrated prediction error minimization}
-\acrodef{MLP}{multilayer perceptron}
-\acrodef{MRMSE}{multi-step root mean squared error}
-\acrodef{T-MRMSE}{translational multi-step root mean squared error}
-\acrodef{R-MRMSE}{rotational multi-step root mean squared error}
-\acrodef{M-Z-score}{multi-step Z-score}
-\acrodef{DRIVE}{Data-driven Robot Input Vector Exploration}
-\acrodef{SNOW}{Self-driving Navigation Optimized for Winter}
-\acrodef{AMSL}{Above Mean Sea Level}
-\acrodef{DoF}{degree of freedom}
-\acrodef{COM}{center of mass}
-\acrodef{VTR}[VT\&R]{Visual Teach and Repeat}
-\acrodef{LTR}[LT\&R]{Lidar Teach and Repeat}
-\acrodef{CNN}{Convolutional Neural Network}
-\acrodef{GeRoNa}{Generic Robot Navigation}
-\acrodef{OE}{Orthogonal-Exponential}
-\acrodef{DD-ORTHEXP}{Differential-Drive-ORTHEXP}
-\acrodef{POI}{Points of Interest}
-\acrodef{CAD}{Computer-Aided Drawing}
-\acrodef{GPS}{Global Positioning System}
-\acrodef{RAM}{Random Access Memory}
-\acrodef{WILN}[WILN]{Weather-Invariant Lidar-based Navigation}
-
 \newcommand{\DOUGHNUTCALIB}{\ac{DRIVE}\xspace}
 \newcommand{\ICRBASED}{\ac{ICR}-based\xspace} 
 \newcommand{\DIMPARAMS}{\bm k}
@@ -237,8 +191,9 @@ mincitenames=1]{biblatex}
 \newcommand{\MRSME}{\epsilon}
 \newcommand{\SENSORMEASUREMENTS}{\bm{z}}
 \newcommand{\NITRO}{\ac{WILN}\xspace} 
-
-
+\newcommand{\mpccost}{l} 
+\newcommand{\statecost}{\bm{Q}}
+\newcommand{\inputcost}{\bm{R}}
 
 %For tikz figure
 \usepackage{tikz}
