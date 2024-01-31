@@ -162,39 +162,6 @@ mincitenames=1]{biblatex}
 \newcommand{\ie}{i.e.,\xspace{}}
 \newcommand{\eg}{e.g.,\xspace{}}
 
-\newcommand{\DOUGHNUTCALIB}{\ac{DRIVE}\xspace}
-\newcommand{\ICRBASED}{\ac{ICR}-based\xspace} 
-\newcommand{\DIMPARAMS}{\bm k}
-\newcommand{\HORDUR}{h_d}
-\newcommand{\WINSIZE}{h}
-\newcommand{\TRAINDATA}{$\mathcal{D}$\xspace}
-\newcommand{\DOUGHNUTDATA}{$\mathcal{D}_D$}
-\newcommand{\HUMANDATA}{$\mathcal{D}_H$}
-\newcommand{\PREDSTATE}{\,^\mapf\!\hat{\bm q}}
-\newcommand{\MEASSTATE}{\,^\mapf\bm q}
-\newcommand{\MARMOTTE}{HD2\xspace}
-\newcommand{\CMDBODYVEL}{^{\robotf}\bm{f}}
-\newcommand{\SLIPBODYVEL}{^{\robotf}\bm{s}}
-\newcommand{\OBSERVEDSLIP}{\bm{s}}
-\newcommand{\INPUTVECTOR}{\bm{u}}
-\newcommand{\STATEPROPMAT}{_{\robotf}^{\mapf}\bm{T}\left(^\mapf\theta_t\right)}
-\newcommand{\INPUTSPACE}{\mathcal{J}}
-\newcommand{\BODYVELSPACE}{\mathcal{B}}
-\newcommand{\CENTRIFUGAL}{\psi}
-\newcommand{\OPTIMCALIBTIME}{$t_{\text{opt}}$\xspace}
-\newcommand{\robotstate}{\bm{q}}
-\newcommand{\mapf}{\mathcal{G}} % map reference frame
-\newcommand{\robotf}{\mathcal{R}} % robot reference frame
-\newcommand{\learnedslip}{\bm{\Xi}}
-\newcommand{\blrweights}{\bm{\gamma}}
-\newcommand{\blrinputs}{\bm{x}}
-\newcommand{\MRSME}{\epsilon}
-\newcommand{\SENSORMEASUREMENTS}{\bm{z}}
-\newcommand{\NITRO}{\ac{WILN}\xspace} 
-\newcommand{\mpccost}{l} 
-\newcommand{\statecost}{\bm{Q}}
-\newcommand{\inputcost}{\bm{R}}
-
 %For tikz figure
 \usepackage{tikz}
 \usepackage{pgfplots}
@@ -209,56 +176,7 @@ mincitenames=1]{biblatex}
 \newcommand{\quebec}{Qu\'{e}bec\xspace} % Québec
 \newcommand{\foretmo}{For\^{e}t Montmorency\xspace} % Québec
 
-% Useful math commands
-\newcommand{\odomf}{\mathcal{O}} % odom reference frame
-\newcommand{\lidarf}{\mathcal{L}} % lidar reference frame
-\newcommand{\pathf}{\mathcal{S}} % path Frenet-Serret frame
-\newcommand{\skreadpc}{\mathcal{P}_s} % Skewed reading point cloud
-\newcommand{\readpc}{\mathcal{P}} % reading point cloud
-\newcommand{\refpc}{\mathcal{J}} % reference point cloud
-\newcommand{\refpoint}{\bm{j}} % reference point cloud
-\newcommand{\match}{\mathcal{M}} % set of point matches
-\newcommand{\weightset}{\mathcal{W}} % set of point weights
-\newcommand{\transform}[2]{$_{#1}^{#2}\bm{T}$} % Transform from #1 frame to #2 frame
-\newcommand{\reftraj}{\bm q_{\text{ref}}} % Reference trajectory
-\newcommand{\poseplane}{\bm q_{\text{2D}}} % 2D robot pose
-\newcommand{\cterr}{\epsilon_{CT}} % Cross-Track error
-\newcommand{\curv}{\kappa} % Path curvature
-\newcommand{\prior}[2]{${}_{#1}^{#2}\bm{\check{T}}$} % prior transform
-\newcommand{\estimate}[2]{${}_{#1}^{#2}\bm{\hat{T}}$} % estimate transform
-\newcommand{\kdtree}{kd-tree${}^5$\xspace} % kd tree
-\newcommand{\robotroll}{^\mathcal{\mapf}\psi} % roll angle
-\newcommand{\robotpitch}{^\mathcal{\mapf}\alpha} % pitch angle
-\newcommand{\robotyaw}{^\mathcal{\mapf}\theta} % yaw angle
-\newcommand{\controllaw}{U(\robotstate, \reftraj)}
-\newcommand{\lyapunovlaw}{V(\robotstate, \reftraj)}
 
-% icp params
-\newcommand{\randsubratio}{\eta_s}
-\newcommand{\bbox}{\bm b}
-\newcommand{\matchernn}{n_m}
-\newcommand{\matchermaxdist}{d_{\text{max}}}
-\newcommand{\matcherepsilon}{\varepsilon}
-\newcommand{\outlierratio}{\eta_d}
-\newcommand{\checkererrortran}{\varepsilon_{{t}_{\text{min}}}}
-\newcommand{\checkererrorrot}{\varepsilon_{{\theta}_{\text{min}}}}
-\newcommand{\maxiticp}{i_\text{max}}
-\newcommand{\maxdistappend}{\rho}
-\newcommand{\normalsnn}{n_n}
-\newcommand{\dynthresh}{\tau_d}
-\newcommand{\voxelsize}{v_s}
-\newcommand{\reftrajdist}{d_{\text{ref}}}
-
-% PF params
-\newcommand{\nomlinvel}{v_{\text{nom}}} % Nominal velocity
-\newcommand{\maxlinvel}{v_{\text{max}}} % Max velocity
-\newcommand{\minlinvel}{v_{\text{min}}} % Min velocity
-\newcommand{\maxrotvel}{\omega_m}
-\newcommand{\OEk}{\beta}
-\newcommand{\OEKh}{\beta_h}
-\newcommand{\OEKg}{\beta_g}
-\newcommand{\goaltol}{\tau_{g}}
-\newcommand{\waypointtol}{\tau_{w}}
 
 % argmin and argmax
 \DeclareMathOperator*{\argmin}{arg\,min}
