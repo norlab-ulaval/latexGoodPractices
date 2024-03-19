@@ -55,10 +55,6 @@
 \DeclareMathAccent{\wideparen}{0}{mathx}{"75}
 % Colored text
 \usepackage{xcolor}
-% end preambule from fsr -->>>>>>>>
-
-%\newcommand{\philg}[1]{\textcolor{blue}{#1}}
-%\newcommand{\babin}[1]{\textcolor{red}{#1}}
 
 \usepackage[printonlyused, nohyperlinks]{acronym}
 \usepackage{algorithm}
@@ -67,6 +63,9 @@
 \usepackage{amsmath} % called by mathtools
 % \usepackage[toc,page]{appendix}
 %\usepackage{bbm}
+% avoid single line on a page or single line under a figure
+% no command to use
+\usepackage[all]{nowidow}
 
 \bibliographystyle{unsrtnat}
 \usepackage[
@@ -80,6 +79,18 @@ url=false,
 eprint=false, 
 maxcitenames=1, 
 mincitenames=1]{biblatex}
+
+\makeatletter
+\newcommand{\tempmaxup}[1]{\def\blx@maxcitenames{99}#1}
+\makeatother
+
+\DeclareCiteCommand{\fullcite}[\tempmaxup]
+{\usebibmacro{prenote}}
+{\usedriver
+	{}
+	{\thefield{entrytype}}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
 
 \usepackage{bm}
 \usepackage[font=small]{caption}
